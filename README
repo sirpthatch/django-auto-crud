@@ -1,0 +1,11 @@
+*** WARNING: This is still very much a work in progress, use at your own risk ***
+
+This is a simple django module which automatically exposes CRUD (created, read, update, delete) views for your django registered modules.  At the moment, here are the steps to use it:
+* Include the project on your path
+* In your root urls conf file, add a reference like the following:
+url(r'^crud/', include(autocrud.urls))
+
+At this point, when you run your server you should be able to make PUT requests to url's like:
+http://somewebsite/crud/myapp/create/mymodel
+
+Again, still a work in progress, but drop a line if you think this would be useful.  
