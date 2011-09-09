@@ -16,12 +16,14 @@ def handle_request(request, appname=None, modelname=None, operation=None):
 
   if operation == 'create':
     return handle_create(request, model)
-  if operation == 'read':
+  elif operation == 'read':
     return handle_read(request, model)
-  if operation == 'update':
+  elif operation == 'update':
     return handle_update(request, model)
-  if operation == 'delete':
+  elif operation == 'delete':
     return handle_delete(request, model)
+  else:
+    return HttpResponseBadRequest()
 
 def handle_create(request, model=None):
   instance = model()
